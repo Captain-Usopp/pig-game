@@ -1,0 +1,201 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+body {
+    position: relative;
+    background: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+    height: 100vh;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95vh;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* PLAYER */
+section.player {
+    padding: 2rem;
+    height: 50%;
+    text-align: center;
+    transition: all 0.75s;
+}
+
+h2.player-name {
+    padding-top: 25px;
+    font-size: 48px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+p.totalscore {
+    text-align: center;
+    font-size: 48px;
+    margin: 25px 0;
+    color: #c7365f;
+}
+
+.player--active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player--active .player-name {
+    font-weight: 400;
+}
+
+.player--active .totalscore {
+    font-weight: 400;
+}
+
+.player--active .current-score-container {
+    opacity: 1;
+}
+
+.player--winner {
+    background-color: #2f2f2f;
+}
+  
+.player--winner .player-name {
+    font-weight: 500;
+    color: #c7365f;
+}
+
+/* CURRENT SCORE CONTAINER */
+.current-score-container {
+    background-color: #c7365f;
+    opacity: 0.8;
+    border-radius: 9px;
+    color: #fff;
+    width: 55%;
+    padding: 1.2rem .5rem;
+    margin: 0 auto;
+    text-align: center;
+    transition: all 0.75s;
+}
+
+p.current-label {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+p.current-score {  font-size: 2rem;  }
+
+/* DICE IMAGE */
+img.dice {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 55px;
+    box-shadow: 0 15px 15px rgb(0 0 0 / 20%);
+}
+
+.hidden {  display: none;  }
+
+/* ALL BUTTONS */
+.btn {
+    position: absolute;
+    color: #444;
+    background: none;
+    border: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: .5rem 1rem;
+    border-radius: 50rem;
+    box-shadow: 0 10px 13px rgb(0 0 0 / 10%);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn.btn--new:active {
+    transform: translate(-50%, 3px) !important;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn.btn--hold:active,
+.btn.btn--roll:active {
+    transform: translate(-5%, 4px) !important;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+button.btn.btn--new {
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button.btn.btn--roll {
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+button.btn.btn--hold {
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+}
+
+footer {
+    position: absolute;
+    bottom: -8%;
+    text-align: center;
+    color: #fff;
+    height: 3rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+img.github-link {  transform: translateY(2px);  }
+
+@media screen and (min-width: 767px) {
+    main {  display: flex;  }
+
+    section.player {
+        flex: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    img.dice {
+        top: 40%;
+        height: 100px;
+    }
+
+    .btn {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 18px;
+    }
+
+    .btn.btn.btn--hold:active {  transform: translate(-50%, 4px) !important;  }
+    .btn.btn.btn--roll:active {  transform: translate(-50%, 4px) !important;  }
+
+    button.btn.btn--new  {  top: 5%;  }
+    button.btn.btn--roll {  top: 65%;  }
+    button.btn.btn--hold {  top: 80%;  }
+}
